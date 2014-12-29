@@ -9,7 +9,7 @@ object Main extends App{
 
     val system =  ActorSystem("lol")
 
-    val helloActor = system.actorOf(Props[HelloActor], name = "helloactor")
+    val helloActor = system.actorOf(Props(new HelloActor("Fred")), name = "helloactor")
     helloActor ! "hello"
     helloActor ! "hey"
 
