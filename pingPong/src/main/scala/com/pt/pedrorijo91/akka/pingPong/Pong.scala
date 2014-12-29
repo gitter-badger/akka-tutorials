@@ -7,7 +7,7 @@ import akka.actor.Actor
  */
 class Pong extends Actor {
 
-  def receive = {
+  def receive : Unit = {
     case PingMessage => {
       println("  pong")
       sender ! PongMessage

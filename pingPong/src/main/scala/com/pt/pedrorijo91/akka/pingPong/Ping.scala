@@ -12,12 +12,12 @@ class Ping(pong: ActorRef) extends Actor{
 
   var count = 0
 
-  def incAndPrint = {
+  def incAndPrint  : Unit = {
     count += 1
     println("ping #" + count)
   }
 
-  def receive = {
+  def receive : Unit  = {
     case StartMessage => {
       incAndPrint
       pong ! PingMessage
